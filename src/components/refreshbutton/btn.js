@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-import Usersview from "./usersview";
+import React from "react";
+import Usersview from "./userview";
+import { connect } from 'react-redux'
+import { fetchUsers } from '../redux'
 
-function Btn(){
-    const [ users, setUsers ] = useState();
-
-    const hRefresh = () => {
-        fetch('https://randomuser.me/api/?format=json&results=10')
-        .then((res) => res.json())
-        .then((data) => setUsers(data.results));
-    }
+function Btn({users, fetchUsers }){
     
-
+    console.log(users);
     return(
         <>
-        <button onClick={hRefresh}> Kliknmij aby odświeżyć</button>
+        <button onClick={fetchUsers}> Kliknmij aby odświeżyć</button>
+        <p>hello</p>
         <Usersview dane={users} />
         </>
     )
 }
-export default Btn;
+
+const mapStateToProps = state => ({
+    users: state.users.users
+})
+const mapDispatchToProps = dispatch => ({
+    fetchUsers: () => dispatch(fetchUsers())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Btn);
+//Dispatch stanu i funkcji fetch-ującej

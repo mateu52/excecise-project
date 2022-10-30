@@ -8,7 +8,7 @@ function Usersview(dane){
             {dane.dane && dane.dane.map((user) => {
                 return <p>{user.name.first }, {user.name.last }</p>
             })}
-            
+
         </div>
     );
 }
