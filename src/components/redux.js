@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 export const fetchUsers = () => {
     return function(dispatch){
         dispatch(fetchRequested());
-        fetch('https://randomuser.me/api/')
+        fetch('https://randomuser.me/api/?results=10')
             .then(response => response.json())
             .then(data => { 
                 dispatch(fetchSucced(data.results.slice(0,10)))
