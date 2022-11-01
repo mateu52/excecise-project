@@ -1,14 +1,9 @@
 import React from "react";
 
-function Usersview(dane){
-    console.log(dane.dane);
+function Usersview(props){
     return(
         <div>
-            <p>Lista: </p>
-            {dane.dane && dane.dane.map((user) => {
-                return <p>{user.name.first }, {user.name.last }</p>
-            })}
-
+            <p>Imię: {props.name}, Nazwisko: {props.lastName}</p>
         </div>
     );
 }

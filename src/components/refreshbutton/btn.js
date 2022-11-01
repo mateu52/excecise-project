@@ -2,6 +2,7 @@ import React from "react";
 import Usersview from "./userview";
 import { connect } from 'react-redux'
 import { fetchUsers } from '../redux'
+import { Link } from 'react-router-dom';
 
 function Btn({users, fetchUsers }){
     
@@ -10,7 +11,18 @@ function Btn({users, fetchUsers }){
         <>
         <button onClick={fetchUsers}> Kliknmij aby odświeżyć</button>
         <p>hello</p>
-        <Usersview dane={users} />
+        
+        {users && users.map((user) => (
+            <div key={user.login.uuid}>
+                <Link to={`/buttonusers/${user.login.username}`} >
+                    <Usersview 
+                        name={user.name.first}
+                        lastName={user.name.last}
+                    />
+                </Link>
+            </div>
+        ))}
+            
         </>
     )
 }
