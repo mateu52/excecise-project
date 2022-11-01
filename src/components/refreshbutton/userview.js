@@ -7,5 +7,4 @@ function Usersview(props){
         </div>
     );
 }
-
 export default Usersview;

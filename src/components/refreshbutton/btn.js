@@ -10,7 +10,7 @@ function Btn({users, fetchUsers }){
     return(
         <>
         <button onClick={fetchUsers}> Kliknmij aby odświeżyć</button>
-        <p>hello</p>
+        <p>Lista:</p>
         
         {users && users.map((user) => (
             <div key={user.login.uuid}>
@@ -22,7 +22,6 @@ function Btn({users, fetchUsers }){
                 </Link>
             </div>
         ))}
-            
         </>
     )
 }

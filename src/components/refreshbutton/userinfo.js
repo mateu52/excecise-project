@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { useParams } from "react-router-dom";
-import { fetchUsers } from '../redux'
 
 function UserInfo({ users }){
     const { userId } = useParams();
@@ -19,15 +18,8 @@ function UserInfo({ users }){
     )
 }
 
-
-
-
 const mapStateToProps = state => ({
     users: state.users.users
 })
-const mapDispatchToProps = dispatch => ({
-    fetchUsers: () => dispatch(fetchUsers())
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);
-//Dispatch stanu i funkcji fetch-ującej
+export default connect(mapStateToProps, null)(UserInfo);
