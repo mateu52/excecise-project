@@ -1,0 +1,48 @@
+body {
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  background-color: rgba(85, 252, 210, 0.363);
+  height: 200px;
+  width: 400px;
+  margin: 20px auto;
+  border-radius: 35px;
+}
+
+.times {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 30px;
+  border-color: rgba(0, 225, 255, 0.534);
+}
+
+p .watchpng {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  width: 50px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .stopwatch {
+    height: 150px;
+    width: 300px;
+  }
+  .times {
+    width: 200px;
+  }
+  .btn {
+    width: 45px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+  }
+  p .watchpng {
+    width: 30px;
+    margin: -12px auto 0 auto;
+  }
+}
