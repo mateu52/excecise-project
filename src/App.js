@@ -12,7 +12,7 @@ import Btn from './components/refreshbutton/btn';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Userinfo from './components/refreshbutton/userinfo';
 import Stopwatch from './components/Stopwatch/Stopwatch';
-import Form from './components/Form/Form';
+import Formdata from './components/Form/Formdata';
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/buttonusers/:userId' element={<Userinfo />} />
           <Route path='/buttonusers' element={<Btn />} />
-          <Route path='/Form' element={<Form />} />
+          <Route path='/Form' element={<Formdata />} />
           <Route path='/Stoper' element={<Stopwatch />} />
         </Routes>
       </div>

@@ -3,6 +3,7 @@ import Usersview from "./userview";
 import { connect } from 'react-redux'
 import { fetchUsers } from '../redux'
 import { Link } from 'react-router-dom';
+import "./style.css";
 
 function Btn({users, fetchUsers }){
     
