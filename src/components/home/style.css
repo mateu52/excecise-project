@@ -25,7 +25,8 @@ body{
     text-shadow: 2px 2px rgb(0, 0, 0);
 }
 .crsl i{
-    font-size:50px;
+    padding-top: 10px;
+    font-size:40px;
     color: rgb(0, 0, 0);
 }
 .pimg{
@@ -53,6 +54,7 @@ body{
     .title-app{
         font-size: 17px;
         margin-bottom: 0px;
+        margin-top: 0;
         text-shadow: 2px 1px rgb(173, 43, 43);
         
     }

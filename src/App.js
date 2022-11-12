@@ -13,6 +13,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Userinfo from './components/refreshbutton/userinfo';
 import Stopwatch from './components/Stopwatch/Stopwatch';
 import Formdata from './components/Form/Formdata';
+import Formapi from './components/FormApi/Formapi';
+import Idtable from './components/FormApi/Idtable';
+import Details from './components/FormApi/Details';
+import Calculator from './components/calculator/calculator';
 
 function App() {
   return (
@@ -29,13 +33,15 @@ function App() {
               className="d-inline-block align-top"
             />{'M.W'}
               </Navbar.Brand> 
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav"><i class="bi bi-list"></i></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className='me-auto'>
                 <Nav.Link ><Link className="link" to='/'>Home</Link></Nav.Link>
                 <Nav.Link ><Link className="link" to='/buttonusers'>Button</Link></Nav.Link>
                 <Nav.Link ><Link className="link" to='/Form'>Form</Link></Nav.Link>
                 <Nav.Link ><Link className="link" to='/Stoper'>Stoper</Link></Nav.Link>
+                <Nav.Link ><Link className="link" to='/Formapi'>Form+api</Link></Nav.Link>
+                <Nav.Link ><Link className="link" to='/Calculator'>Calculator</Link></Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -46,6 +52,10 @@ function App() {
           <Route path='/buttonusers' element={<Btn />} />
           <Route path='/Form' element={<Formdata />} />
           <Route path='/Stoper' element={<Stopwatch />} />
+          <Route path='/Formapi' element={<Formapi /> } />
+          <Route path="/Idtable" element={<Idtable />} />
+          <Route path="/Details" element={<Details />} />
+          <Route path="/Calculator" element={<Calculator />} />
         </Routes>
       </div>
       

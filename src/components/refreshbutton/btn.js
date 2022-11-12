@@ -9,7 +9,7 @@ function Btn({users, fetchUsers }){
     
     console.log(users);
     return(
-        <>
+        <div className="bgbtn">
         <button onClick={fetchUsers}> Kliknmij aby odświeżyć</button>
         <p>Lista:</p>
         
@@ -23,7 +23,7 @@ function Btn({users, fetchUsers }){
                 </Link>
             </div>
         ))}
-        </>
+        </div>
     )
 }
 
