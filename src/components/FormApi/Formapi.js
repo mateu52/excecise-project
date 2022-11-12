@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 const { REACT_APP_DB_ID, REACT_APP_API_KEY } = process.env;
 console.log(process.env);
 function Formapi(){
-    const [ data, setData ] = useState([]);
+    const [ iddata, setData ] = useState([]);
     console.log(process.env);
 
     const fetchIdents = async () => {
@@ -20,8 +20,17 @@ function Formapi(){
             }
         }
         const response = await fetch(apiConfig.identList, requestConfig);
-        const datab = await response.json();
-        console.log(datab)
+        const responseData = await response.json();
+        
+        const data = [];
+        console.log(responseData)
+        responseData.records.forEach((elem) => {
+            data.push({
+                id: elem.id,
+                name: elem.fields.name
+            })
+        })
+        setData(data);
     }
     useEffect(()=> {
             fetchIdents();
@@ -39,9 +48,9 @@ function Formapi(){
                         </li>
                     </ul>
                 </nav>
-            {data.map && data.map((user) => {
-                <div key={user.id}>
-                    <p>{user.fields.name}</p>
+            {iddata.map && iddata.map((user) => {
+                return <div key={user.id}>
+                    <p>{user.name}</p>
                 </div>
             })}
 
