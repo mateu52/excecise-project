@@ -5,30 +5,32 @@ import Col from 'react-bootstrap/Col';
 import './style.css';
 
 function Calculator(){
-    function useCounter(initialValue){
+
+    function useCounter(initialValue = ''){
         const [ value, setValue ] =useState(initialValue);
         const sendChange = ( props ) => {
-            setValue(props);
-            console.log(props)
+            if(props==='del'){
+                setValue('')
+            }else{
+                const sum= value+props;
+                setValue(sum);
+            }
         };
         return [ value, sendChange ];
     }
-
-    const [ counter, setCounter ] = useCounter();//useState({        //x:'34',y:'',z:[2,45,5]    });
-    const onClick = ( props ) => {
-        setCounter(props);
-        console.log(counter)
+    const [ counter, setCounter ] = useCounter('');
+    const hClick = ( event) => {
+        setCounter(event)
     }
-    console.log(counter)
     //komponent - ekran
     return(
             <div>
                 <h4>napis{counter}</h4>
             <Container >
                 <Row className="row">
-                    <Col className="col" type="button" onClick={()=>onClick(1)}>7</Col>
-                    <Col className="col" type="button" onClick={()=>onClick(2)}>8</Col>
-                    <Col className="col">9</Col>
+                    <Col className="col" type="button" value='4' onClick={() => hClick(2)}>7</Col>
+                    <Col className="col" type="button" value='2' onClick={() => hClick(4)}>8</Col>
+                    <Col className="col" type="button" value='45' onClick={() => hClick('del')}>9</Col>
                     <Col className="col">DEL</Col>
                 </Row>
                 <Row className="row">
