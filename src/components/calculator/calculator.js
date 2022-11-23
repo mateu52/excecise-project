@@ -18,20 +18,44 @@ function Calculator(){
         };
         return [ value, sendChange ];
     }
-    const [ counter, setCounter ] = useCounter('');
-    const hClick = ( event) => {
-        setCounter(event)
+    function useSume(value1 = '', value2 = '', value3 = ''){
+        const [value, setValue ] = useState('');
+        const val_1 = value1; 
+        const val_2 = value2;
+        const sendChange = () => {
+            //if '+'
+            setValue( val_1 + val_2 );
+        }
+        return [ value, sendChange ];
     }
+    const [ counter, setCounter ] = useCounter(''); //wyswietlacz
+    const [ numbers, setNumber ] = useState('') //liczba w stanie
+    const [ action, setAction ] = useState('') // działanie
+    const [ sume, setSume ] = useSume(''); //wynik
+    const hClick = ( event) => {
+        console.log(Number.isInteger(event))
+        if(Number.isInteger(event)===true){
+            setCounter(event)
+        }else if(event === 'sum'){
+            setSume(counter, numbers)
+            console.log('hfg')
+        }else if(event === '+' || '-' || '*' || '/' ){
+            setNumber(counter)
+            setCounter('del');
+            setAction(event)
+        }
+    }
+    console.log(counter, numbers, action);
     //komponent - ekran
     return(
             <div>
-                <h4>napis{counter}</h4>
+                <h4> counter: {counter},numbers: {numbers},action: {action}, suma: {sume} </h4>
             <Container >
                 <Row className="row">
                     <Col className="col" type="button" value='4' onClick={() => hClick(2)}>7</Col>
                     <Col className="col" type="button" value='2' onClick={() => hClick(4)}>8</Col>
-                    <Col className="col" type="button" value='45' onClick={() => hClick('del')}>9</Col>
-                    <Col className="col">DEL</Col>
+                    <Col className="col" type="button" value='45' onClick={() => hClick('+')}>9</Col>
+                    <Col className="col" type="button" value='45' onClick={() => hClick('sum')}>DEL</Col>
                 </Row>
                 <Row className="row">
                     <Col className="col">4</Col>
