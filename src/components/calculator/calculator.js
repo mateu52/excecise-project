@@ -5,6 +5,10 @@ import Col from 'react-bootstrap/Col';
 import './style.css';
 
 function Calculator(){
+    
+    //const [ calculation, setCalculation ] = useState('');
+    //const [ output, setOutput ] = useState('');
+    //const actions = ['/', '*', '+', '-', '.'];
 
     function useCounter(initialValue = ''){
         const [ value, setValue ] =useState(initialValue);
@@ -33,6 +37,8 @@ function Calculator(){
     const [ action, setAction ] = useState('') // działanie
     const [ sume, setSume ] = useSume(''); //wynik
     const hClick = ( event) => {
+        const evt = event.target.innerHTML;
+        console.log(evt);
         console.log(Number.isInteger(event))
         if(Number.isInteger(event)===true){
             setCounter(event)
