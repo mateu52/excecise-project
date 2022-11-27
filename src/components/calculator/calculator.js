@@ -5,63 +5,32 @@ import Col from 'react-bootstrap/Col';
 import './style.css';
 
 function Calculator(){
-    
-    //const [ calculation, setCalculation ] = useState('');
-    //const [ output, setOutput ] = useState('');
-    //const actions = ['/', '*', '+', '-', '.'];
 
-    function useCounter(initialValue = ''){
-        const [ value, setValue ] =useState(initialValue);
-        const sendChange = ( props ) => {
-            if(props==='del'){
-                setValue('')
-            }else{
-                const sum= value+props;
-                setValue(sum);
-            }
-        };
-        return [ value, sendChange ];
+    const [ calculation, setCalculation ] = useState('');
+    const [ output, setOutput ] = useState('');
+    const actions = ['/', '*', '+', '-', '.'];    
+    
+    const updateCalculation = value => {
+        if (
+            actions.includes(value) & calculation === '' ||
+            actions.includes(value) & actions.includes()
+        )
     }
-    function useSume(value1 = '', value2 = '', value3 = ''){
-        const [value, setValue ] = useState('');
-        const val_1 = value1; 
-        const val_2 = value2;
-        const sendChange = () => {
-            //if '+'
-            setValue( val_1 + val_2 );
-        }
-        return [ value, sendChange ];
+
+    const calculate = () => {
+        setCalculation(eval(calculation).toString());
     }
-    const [ counter, setCounter ] = useCounter(''); //wyswietlacz
-    const [ numbers, setNumber ] = useState('') //liczba w stanie
-    const [ action, setAction ] = useState('') // działanie
-    const [ sume, setSume ] = useSume(''); //wynik
-    const hClick = ( event) => {
-        const evt = event.target.innerHTML;
-        console.log(evt);
-        console.log(Number.isInteger(event))
-        if(Number.isInteger(event)===true){
-            setCounter(event)
-        }else if(event === 'sum'){
-            setSume(counter, numbers)
-            console.log('hfg')
-        }else if(event === '+' || '-' || '*' || '/' ){
-            setNumber(counter)
-            setCounter('del');
-            setAction(event)
-        }
-    }
-    console.log(counter, numbers, action);
+
     //komponent - ekran
     return(
             <div>
-                <h4> counter: {counter},numbers: {numbers},action: {action}, suma: {sume} </h4>
+                
             <Container >
                 <Row className="row">
-                    <Col className="col" type="button" value='4' onClick={() => hClick(2)}>7</Col>
-                    <Col className="col" type="button" value='2' onClick={() => hClick(4)}>8</Col>
-                    <Col className="col" type="button" value='45' onClick={() => hClick('+')}>9</Col>
-                    <Col className="col" type="button" value='45' onClick={() => hClick('sum')}>DEL</Col>
+                    <Col className="col" type="button" value='4' onClick={()=>updateCalculation(2)}>2</Col>
+                    <Col className="col" type="button" value='2' onClick={()=>updateCalculation(4)}>4</Col>
+                    <Col className="col" type="button" value='45' onClick={()=>{updateCalculation('+')}}>9</Col>
+                    <Col className="col" type="button" value='45' onClick={calculate}>DEL</Col>
                 </Row>
                 <Row className="row">
                     <Col className="col">4</Col>
