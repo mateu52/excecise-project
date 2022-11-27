@@ -14,26 +14,41 @@ function Calculator(){
         if (
             actions.includes(value) & calculation === '' ||
             actions.includes(value) & actions.includes()
-        )
+        )   { 
+                return 
+            }
+        setCalculation(calculation+value)
+        
+        if (!actions.includes(value)){
+            setOutput(eval(calculation+value).toString())
+        }
     }
 
     const calculate = () => {
         setCalculation(eval(calculation).toString());
     }
 
+    const clear = () => {
+        if(calculation ===''){
+            return
+        }
+        const value=calculation.slice(0,-1)
+        setCalculation(value)
+    }
+
     //komponent - ekran
     return(
             <div>
-                
+                <h5>{calculation}</h5>
             <Container >
                 <Row className="row">
-                    <Col className="col" type="button" value='4' onClick={()=>updateCalculation(2)}>2</Col>
-                    <Col className="col" type="button" value='2' onClick={()=>updateCalculation(4)}>4</Col>
+                    <Col className="col" type="button" value='4' onClick={()=>updateCalculation('2')}>2</Col>
+                    <Col className="col" type="button" value='2' onClick={()=>updateCalculation('4')}>4</Col>
                     <Col className="col" type="button" value='45' onClick={()=>{updateCalculation('+')}}>9</Col>
-                    <Col className="col" type="button" value='45' onClick={calculate}>DEL</Col>
+                    <Col className="col" type="button" value='45' onClick={clear}>DEL</Col>
                 </Row>
                 <Row className="row">
-                    <Col className="col">4</Col>
+                    <Col className="col" onClick={calculate}>=</Col>
                     <Col className="col">5</Col>
                     <Col className="col">6</Col>
                     <Col className="col">+</Col>
