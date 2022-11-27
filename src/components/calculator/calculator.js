@@ -5,38 +5,57 @@ import Col from 'react-bootstrap/Col';
 import './style.css';
 
 function Calculator(){
-    const [ counter, setCounter ] = useState();
+
+    const [ calculation, setCalculation ] = useState('');
+    const [ output, setOutput ] = useState('');
+    const actions = ['/', '*', '+', '-', '.'];    
+    
+    const updateCalculation = value => {
+        if (
+            actions.includes(value) & calculation === '' ||
+            actions.includes(value) & actions.includes()
+        )
+    }
+
+    const calculate = () => {
+        setCalculation(eval(calculation).toString());
+    }
+
+    //komponent - ekran
     return(
-        <Container className="buttons" >
-            <Row className="row">
-                <Col>7</Col>
-                <Col>8</Col>
-                <Col>9</Col>
-                <Col>DEL</Col>
-            </Row>
-            <Row className="row">
-                <Col>4</Col>
-                <Col>5</Col>
-                <Col>6</Col>
-                <Col>+</Col>
-            </Row>
-            <Row className="row"> 
-                <Col>1</Col>
-                <Col>2</Col>
-                <Col>3</Col>
-                <Col>-</Col>
-            </Row>
-            <Row className="row">
-                <Col>.</Col>
-                <Col>0</Col>
-                <Col>/</Col>
-                <Col>x</Col>
-            </Row>
-            <Row className="row">
-                <Col>RESET</Col>
-                <Col>=</Col>
-            </Row>
+            <div>
+                
+            <Container >
+                <Row className="row">
+                    <Col className="col" type="button" value='4' onClick={()=>updateCalculation(2)}>2</Col>
+                    <Col className="col" type="button" value='2' onClick={()=>updateCalculation(4)}>4</Col>
+                    <Col className="col" type="button" value='45' onClick={()=>{updateCalculation('+')}}>9</Col>
+                    <Col className="col" type="button" value='45' onClick={calculate}>DEL</Col>
+                </Row>
+                <Row className="row">
+                    <Col className="col">4</Col>
+                    <Col className="col">5</Col>
+                    <Col className="col">6</Col>
+                    <Col className="col">+</Col>
+                </Row>
+                <Row className="row"> 
+                    <Col className="col">1</Col>
+                    <Col className="col">2</Col>
+                    <Col className="col">3</Col>
+                    <Col className="col">-</Col>
+                </Row>
+                <Row className="row">
+                    <Col className="col">.</Col>
+                    <Col className="col">0</Col>
+                    <Col className="col">/</Col>
+                    <Col className="col">x</Col>
+                </Row>
+                <Row className="row">
+                    <Col>RESET</Col>
+                    <Col>=</Col>
+                </Row>
         </Container>
+        </div>
     )
 }
 
