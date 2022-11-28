@@ -39,14 +39,18 @@ function Calculator(){
     //komponent - ekran
     return(
             <div>
+
                 {calculation || '0'}
                 <p></p>
                     {output ? <span className="preRes">{output}</span>:''}
                 
-            <Container >
+
+                <h5>{calculation}</h5>
+
                 <Row className="row">
                     <Col className="col" type="button" value='4' onClick={()=>updateCalculation('2')}>2</Col>
                     <Col className="col" type="button" value='2' onClick={()=>updateCalculation('4')}>4</Col>
+
                     <Col className="col" type="button" value='45' onClick={()=>{updateCalculation('+')}}>+</Col>
                     <Col className="col" type="button" value='45' onClick={clear}> del </Col>
                 </Row>
@@ -54,6 +58,15 @@ function Calculator(){
                     <Col className="col" type="button" onClick={calculate}>=</Col>
                     <Col className="col" type="button" onClick={()=>{updateCalculation('.')}}>.</Col>
                     <Col className="col" type="button" onClick={()=>{updateCalculation('0')}}>0</Col>
+
+                    <Col className="col" type="button" value='45' onClick={()=>{updateCalculation('+')}}>9</Col>
+                    <Col className="col" type="button" value='45' onClick={clear}>DEL</Col>
+                </Row>
+                <Row className="row">
+                    <Col className="col" onClick={calculate}>=</Col>
+                    <Col className="col">5</Col>
+                    <Col className="col">6</Col>
+
                     <Col className="col">+</Col>
                 </Row>
                 <Row className="row"> 
