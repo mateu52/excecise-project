@@ -1,9 +1,15 @@
+.containerCalc {
+  width: 300px;
+  background-color: #1f95f6;
+  padding: 15px;
+}
+
 .row {
-  background-color: #4e8cff;
-  width: 80%;
+  background-color: #0047ca;
   margin: 2px;
 }
 
 .col {
   margin-left: 2px;
+  background-color: #5fbcff;
 }
