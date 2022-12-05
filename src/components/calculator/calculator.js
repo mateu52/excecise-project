@@ -38,45 +38,45 @@ function Calculator(){
 
     //komponent - ekran
     return(
-            <div>
-
-                {calculation || '0'}
-                <p></p>
+        <div>
+            <div className="table">
+                <p className="dispsum">{calculation || '0'}</p>
+                <p className="disply">
                     {output ? <span className="preRes">{output}</span>:''}
-                
-
+                    </p>
+            </div>
             <Container className="containerCalc" fluid="md">
                 <Row className="row mb-1">
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('7')}>7</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('8')}>8</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>{updateCalculation('9')}}>9</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={clear}> del </Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('7')}>7</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('8')}>8</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>{updateCalculation('9')}}>9</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={clear}> del </Col>
                 </Row>
                 <Row className="row mb-1">
-                    <Col className="col d-flex justify-content-center pt-1 pb-1 " type="button" onClick={()=>{updateCalculation('4')}}>4</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>{updateCalculation('5')}}>5</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>{updateCalculation('6')}}>6</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('+')}>+</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1 " type="button" onClick={()=>{updateCalculation('4')}}>4</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>{updateCalculation('5')}}>5</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>{updateCalculation('6')}}>6</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('+')}>+</Col>
                 </Row>
                 <Row className="row mb-1">
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('1')}>1</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('2')}>2</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('3')}>3</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('-')}>-</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('1')}>1</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('2')}>2</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('3')}>3</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('-')}>-</Col>
                 </Row>
                 <Row className="row mb-1"> 
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('.')}>.</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('0')}>0</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('/')}>/</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={()=>updateCalculation('*')}>x</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('.')}>.</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('0')}>0</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('/')}>/</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={()=>updateCalculation('*')}>x</Col>
                 </Row>
                 <Row className="row">
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={clear}>del</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={clear}>del</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={calculate}>=</Col>
-                    <Col className="col d-flex justify-content-center pt-1 pb-1" type="button" onClick={calculate}>=</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={clear}>del</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={clear}>del</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={calculate}>=</Col>
+                    <Col className="col d-flex justify-content-center m-1 pt-1 pb-1" type="button" onClick={calculate}>=</Col>
                 </Row>
-        </Container>
+            </Container>
         </div>
     )
 }

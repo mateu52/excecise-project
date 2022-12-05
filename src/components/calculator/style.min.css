@@ -1,1 +1,1 @@
-.containerCalc{width:300px;background-color:#1f95f6;padding:15px}.row{background-color:#0047ca;margin:2px}.col{margin-left:2px;background-color:#5fbcff}
+.containerCalc{width:300px;border:solid 3px #0047ca;background-color:#1f95f6;padding:15px}.row{background-color:#0047ca;margin:2px}.col{margin-left:2px;background-color:#5fbcff}.table{display:block;border:solid 6px #0047ca;background-color:#1f95f6;width:300px;margin:auto;margin-top:15px}.dispsum{display:flex;justify-content:flex-end;font-size:18px}.disply{display:flex;justify-content:center;font-size:14px}
