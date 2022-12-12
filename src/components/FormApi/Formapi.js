@@ -1,36 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { fetchApi } from "./fetchApi";
 
 function Formapi(){
-    const [ iddata, setData ] = useState([]);
-
-    const fetchData = async () => {
-        const data = await fetchApi();
-        setData(data);
-    }
-
-    useEffect(()=> {
-            fetchData();
-    },[])
+    
     
     return(
             <div>
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/Idtable">Id table</Link>
+                            <Link to="/Idtable">Imiona</Link>
                         </li>
                         <li>
-                            <Link to="/Details">details</Link>
+                            <Link to="/Details">Miasta</Link>
                         </li>
                     </ul>
                 </nav>
-            {iddata.map && iddata.map((user) => {
-                return <div key={user.id}>
-                    <p>{user.name}</p>
-                </div>
-            })}
+                <h4>
+                    Baza Airtable - dwie bazy: Imiona oraz Miasta.
+                </h4>
+            
+
+            
 
             
             </div>
