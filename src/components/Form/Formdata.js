@@ -6,13 +6,18 @@ import Container from 'react-bootstrap/Container';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Postapi } from "./Api";
 
 import "./style.css"
+import { useEffect } from "react";
 function Formdata(){
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data) ;
     //const d =new Date();
     //console.log(d)
+    useEffect(() => {
+      Postapi();
+    },[]);
     return(
       <Container>
           <Form onSubmit={handleSubmit(onSubmit)} className="forminput mt-3">
