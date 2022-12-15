@@ -6,18 +6,36 @@ import Container from 'react-bootstrap/Container';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Postapi } from "./Api";
+import api from "./Api";
 
 import "./style.css"
-import { useEffect } from "react";
 function Formdata(){
+  //const [ name, setName ] = useState();
+  //const [ city, setCity ] = useState();
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data) ;
-    //const d =new Date();
-    //console.log(d)
-    useEffect(() => {
-      Postapi();
-    },[]);
+    const onSubmit = data => {
+      const dataname = { 
+        records:[{
+          fields:{
+            "name": data.name
+          }
+        }]
+      }
+      const datacity = { 
+        records:[{
+          fields:{
+            "City": data.city
+          }
+        }]
+      }
+      api.post('/identable', dataname);
+      api.post('/details', datacity);
+    }
+
+
+
+    
     return(
       <Container>
           <Form onSubmit={handleSubmit(onSubmit)} className="forminput mt-3">
@@ -37,8 +55,8 @@ function Formdata(){
             <Form.Group className="mb-3 formgroup"  controlId="formBasicEmail">
             <InputGroup.Text>Email</InputGroup.Text>
               <Form.Control 
-                type="e-mail" placeholder="Enter email" 
-                {...register("email")}
+                type="city" placeholder="Enter city" 
+                {...register("city")}
                 />
             </Form.Group>
             </Col>
